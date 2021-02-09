@@ -111,8 +111,20 @@
 
     </div>
     <!-- end chat -->
-
 </div>
+<footer>
+    <div style="text-align: center; color: white; margin-top: 15px">
+        <ul>
+            <li>
+                <a href="https://www.cnblogs.com/wwzhen/" style="color: white">powered by: wwzhen</a>
+                <a href="https://https://github.com/wwzhen/bot_chat" style="color: white; margin-left: 20px">github</a>
+            </li>
+        </ul>
+    </div>
+    <p style="text-align: center">
+        Copyright wwzhen. All Rights Reserved.
+    </p>
+</footer>
 <!-- end container -->
 
 <script id="message-template" type="text/x-handlebars-template">
@@ -140,32 +152,22 @@
     </li>
 </script>
 
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-</script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
 <script type="text/javascript" src='/static/js/handlebars.min.js'></script>
 <script type="text/javascript" src='/static/js/list.min.js'></script>
 <script type="text/javascript" src="/static/js/script.js"></script>
 <script>
     L2Dwidget.init({
-        pluginRootPath: "/5e8ab1e31368c/",
-        pluginJsPath: "lib/",
-        pluginModelPath: "assets/",
-        tagMode: !1,
-        debug: !1,
-        model: {
-            scale: 2,
-            jsonPath: "./assets/asuna_33.model.json"
-        },
-        display: {
-            position: "right",
-            width: 110,
-            height: 150,
-            hOffset: 20
-        },
-        mobile: {
-            show: !1
-        },
-        log: !1
+        "model": {
+            jsonPath:
+                "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
+            "scale": 1
+        }, "display": {
+            "position": "left", "width": 150, "height": 300,
+            "hOffset": 0, "vOffset": -20
+        }, "mobile": {"show": true, "scale": 0.5},
+        "react": {"opacityDefault": 0.7, "opacityOnHover": 0.2}
     });
 </script>
 </body>
