@@ -15,7 +15,11 @@ class ChatApi(object):
             'msg': msg
         }
         rep = requests.get(self.url, params=params)
-        result = json.loads(rep.content)
-        answer = result['content']
-        print(answer)
-        return answer
+        try:
+            result = json.loads(rep.content)
+            answer = result['content']
+            print(answer)
+            return answer
+        except Exception as e:
+            print("call api error: %e" % e)
+            return u'嘤嘤嘤'

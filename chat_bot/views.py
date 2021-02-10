@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 # Create your views here.
 from chat_bot.chat_api import ChatApi
 from chat_bot.utils import render_json
@@ -15,9 +13,9 @@ def index(request):
 
 
 def chat(request):
-    question = request.GET.get('question')
+    question = request.GET.get('question', '')
     if not question:
-        return {"result": False, "msg": u"请输入问题"}
+        return render_json({"result": False, "msg": u"喵喵喵？"})
     chat_api = ChatApi()
     res = chat_api.chat(question)
     return render_json({"result": True, "msg": res})
