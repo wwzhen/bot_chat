@@ -47,10 +47,9 @@ var chat = {
             state: state,
             time: time ? time : this.getCurrentTime()
         };
-        setTimeout(function () {
-            this.$chatHistoryList.append(templateResponse(contextResponse));
-            this.scrollToBottom();
-        }.bind(this), 10);
+        this.$chatHistoryList.append(templateResponse(contextResponse));
+        this.scrollToBottom();
+
     },
     //发送
     addMessage: function () {
@@ -103,6 +102,7 @@ var chat = {
             success: function (res) {
                 if (res['result'] && res['data'].length > 0) {
                     for (let item of res['data']) {
+                        console.log(item['content'])
                         if (item['type'] === 'S') {
                             that.render(item['content'], chat.timeFormat(item['create_time']))
                         } else {
