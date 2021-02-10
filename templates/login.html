@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/css/login.css"/>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body onkeydown="pressLogin()">
+<div id="login-box">
+    <h1>Login</h1>
+    <div class="form">
+        <div class="item">
+            <i class="fa fa-github-alt" style="font-size:24px"></i>
+            <input type="text" id="name" placeholder="Username" value="admin">
+        </div>
+        <div class="item">
+            <i class="fa fa-search" style="font-size:24px"></i>
+            <input type="password" id="password" placeholder="Password" value="aaaaaa">
+        </div>
+    </div>
+    <button onclick="login()">Login</button>
+</div>
+
+</body>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    function login() {
+        let name = $("#name").val().trim()
+        let password = $("#password").val().trim()
+        if (name && password) {
+            $.ajax({
+                url: 'api/login/',
+                type: 'POST',
+                data: {
+                    "username": name,
+                    "password": password
+                },
+                success: function (res) {
+                    if (res.result) {
+                        document.location.reload()
+                    }
+                }
+            })
+        }
+    }
+
+    function pressLogin() {
+        if (event.keyCode === 13) {
+            login()
+        }
+    }
+</script>
+</html>

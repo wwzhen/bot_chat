@@ -102,11 +102,12 @@ body {
     color: #92959E;
 }
 
-.chat .chat-header .fa-star {
+.chat .chat-header .fa-sign-out {
     float: right;
     color: #D8DADF;
     font-size: 20px;
     margin-top: 12px;
+    cursor: pointer;
 }
 
 .chat .chat-history {

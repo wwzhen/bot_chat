@@ -64,9 +64,10 @@
 
             <div class="chat-about">
                 <div class="chat-with">霸道总裁阿南</div>
+                <div class="chat-with-name" style="display: none">anan</div>
                 <div class="chat-num-messages bot-desc">呵，我还从来没有尝试过被拒绝的滋味呢</div>
             </div>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-sign-out" onclick="logout()"></i>
         </div>
         <!-- end chat-header -->
 
@@ -83,7 +84,7 @@
                     </div>
                 </li-->
 
-                <li>
+                <!--li>
                     <div class="message-data">
                         <span class="message-data-name"><i class="fa fa-circle online"></i> 霸道总裁阿南</span>
                         <span class="message-data-time">10:12 AM, Today</span>
@@ -91,7 +92,7 @@
                     <div class="message my-message">
                         呵，你已经成功引起了我的注意
                     </div>
-                </li>
+                </li-->
 
             </ul>
 
@@ -130,7 +131,7 @@
 <script id="message-template" type="text/x-handlebars-template">
     <li class="clearfix">
         <div class="message-data align-right">
-            <span class="message-data-time">{{ time }}, Today</span> &nbsp; &nbsp;
+            <span class="message-data-time">{{ time }}</span> &nbsp; &nbsp;
             <span class="message-data-name">上班划水</span> <i class="fa fa-circle me"></i>
         </div>
         <div class="message other-message float-right">
@@ -144,7 +145,7 @@
     <li>
         <div class="message-data">
             <span class="message-data-name"><i class="fa fa-circle online"></i> {{ bot_name }}</span>
-            <span class="message-data-time">{{ time }}, Today</span>
+            <span class="message-data-time">{{ time }}</span>
         </div>
         <div class="message my-message" data-state="{{ state }}">
             {{ response }}<img src="{{ imgurl }}" class="myimg">

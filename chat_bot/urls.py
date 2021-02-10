@@ -6,4 +6,9 @@ urlpatterns = [
     url(r'^api/test/$', views.test),
     url(r'^$', views.index),
     url(r'^api/chat/$', views.chat),
+
+    url(r'^api/login/$', views.user_login),
+    url(r'^api/logout/$', views.user_logout),
+
+    url(r'^api/chat-history/$', views.chat_history),
 ]
