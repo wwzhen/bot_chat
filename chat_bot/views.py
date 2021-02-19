@@ -42,15 +42,19 @@ def user_login(request):
         return render_json({"result": False, "msg": u"登录失败"})
 
 
-def register(request):
+def register_page(request):
+    return render_mako_context(request, '/register.html')
+
+
+def user_register(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
-    User.objects.create(username=username, password=password)
-    return render_json({"result": True, "msg": u"创建用户成功"})
+    user = User.objects.create_user(username=username, password=password)
+    # login(request, user)
+    return render_json({"result": True, "msg": u"注册成功"})
 
 
 def user_logout(request):
-    logout(request)
     logout(request)
     return render_json({"result": True, "msg": u"成功登出"})
 

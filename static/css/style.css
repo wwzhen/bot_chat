@@ -6,6 +6,8 @@
 
 body {
     background-color: #262626;
+    /*background: url("/static/img/backcolor.jpeg");*/
+    background-size: 100%;
     font: 14px/20px "Lato", Arial, sans-serif;
     padding: 40px 0;
     color: white;

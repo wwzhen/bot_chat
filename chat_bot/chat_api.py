@@ -18,7 +18,6 @@ class ChatApi(object):
         try:
             result = json.loads(rep.content)
             answer = result['content']
-            print(answer)
             return answer
         except Exception as e:
             print("call api error: %e" % e)
